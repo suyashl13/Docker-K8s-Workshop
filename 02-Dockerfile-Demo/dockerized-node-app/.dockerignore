@@ -1,0 +1,7 @@
+# Node Related!
+node_modules
+npm-debug.log
+
+# Docker Related!
+Dockerfile
+.dockerignore
