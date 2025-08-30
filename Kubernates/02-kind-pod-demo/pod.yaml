@@ -6,10 +6,19 @@ metadata:
     run: nginx-pod-2
   name: nginx-pod-2
 spec:
+  automountServiceAccountToken: false
   containers:
-  - image: nginx
+  - image: nginx:1.25.4
     name: nginx-pod-2
-    resources: {}
+    resources:
+      requests:
+        cpu: "100m"
+        memory: "128Mi"
+        ephemeral-storage: "128Mi"
+      limits:
+        cpu: "250m"
+        memory: "256Mi"
+        ephemeral-storage: "256Mi"
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 status: {}
